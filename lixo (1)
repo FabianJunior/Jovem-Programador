@@ -1,0 +1,32 @@
+cpf=input('qual é o seu cpf')
+pessoa=pasta_dia_22.buscar_pessoa_por_cpf(cpf)
+
+if pessoa is None:
+    print('essa pessoa não existe no banco de dados!')
+    nome_pessoa=input('qual o nome da pessoa')
+    email_pessoa=input('qual é o seu email?')
+    pasta_dia_22.inserir_pessoa(nome_pessoa,email_pessoa,cpf)
+    pessoa=pasta_dia_22.buscar_pessoa_por_cpf(cpf)
+
+print('vamos criar um carro')
+modelo=input('qual o modelo do carro?;')
+marca=input('qual a marca do veiculo?;')
+Ano=int(input('qual o ano do carro?;'))
+pasta_dia_22.inserir_carro(marca,modelo,Ano,pessoa(0))
+print('CARRO INSERIDO')
+
+
+if __name__ =="__main__":
+    criar_tabela_pessoas()
+    inserir_pessoa_no_site('Fabian','dener',True)
+
+#matheus colunas
+def renderizar():
+    carros=banco.buscar_carro_por_marca()
+    row=0
+    while(tela_carros.tableWidget.rowCount()>0):tela_carros.tableWidget.removeRow(0)
+    for i in carros:
+        tela_carros.tableWidget.insertRow(tela_carros.tableWidget.rowCount())
+        tela_carros.tableWidget.setItem(row,0,QtWidgets.QTableWidgetItem(str(i[0])))
+        tela_carros.tableWidget.setItem(row,1,QtWidgets.QTableWidgetItem(str(i[1])))
+        tela_carros.tableWidget.setItem(row,2,QtWidgets.QTableWidgetItem(str(i[2])))
