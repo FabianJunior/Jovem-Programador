@@ -18,8 +18,8 @@ class Usuarios():
         self.usuario=None
         self.senha=None
     def banco_para_modelo(self,usuario_banco):
-        self.usuario=usuario_banco(0)
-        self.senha=usuario_banco(1)
+        self.usuario=usuario_banco
+        self.senha=usuario_banco
 
 class Carro():
     def __init__(self):
@@ -30,7 +30,7 @@ class Carro():
         self.marca=carro_banco(0)
         self.modelo=carro_banco(1)
         self.ano=carro_banco(2)
-    def inseir_valores(self,marca,modelo,ano):
+    def inserir_valores(self,marca,modelo,ano):
         self.marca=marca
         self.modelo=modelo
         self.ano=ano

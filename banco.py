@@ -98,12 +98,12 @@ def buscar_carro_por_marca(marca):
     return cursor.fetchone()
 
 
-def buscar_pessoa_por_id(id):
+def buscar_carro_por_modelo(modelo):
     banco=conectar()
     cursor=banco.cursor()
-    criar_tabela_pessoas()
-    cursor.execute(f"SELECT rowid, * FROM pessoas WHERE rowid={id};")
-    return cursor.fetchone()
+    criar_tabela_carros()
+    cursor.execute(f"SELECT rowid, * FROM carros WHERE modelo='{modelo}';")
+    return cursor.fetchall()
 
 def deletar_carro_por_modelo(modelo):
     banco=conectar()
@@ -116,6 +116,6 @@ def alterar_carro(marca,modelo,ano):
     banco=conectar()
     cursor=banco.cursor()
     criar_tabela_carros()
-    cursor.execute(f" UPDATE usuarios SET marca='{marca}',modelo='{modelo}',ano='{ano}")
+    cursor.execute(f" UPDATE carros SET marca='{marca}',modelo='{modelo}',ano='{ano}")
     banco.commit()
     banco.close()
